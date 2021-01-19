@@ -15,4 +15,7 @@ else
 	exit -1
 endif
 	echo "  version: $(PREVIEW_VERSION)" >> requirements.yaml
+	wget https://get.helm.sh/helm-v2.17.0-linux-amd64.tar.gz
+	tar -xvzf helm-v2.17.0-linux-amd64.tar.gz
+	cp linux-amd64/helm /usr/bin/helm
 	jx step helm build
